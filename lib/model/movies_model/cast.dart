@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import '../../utils/function.dart';
+
 class Cast extends Equatable {
   final String name;
   final String profileUrl;
