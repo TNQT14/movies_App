@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import '../model/error_message_model.dart';
 
 abstract class Failure extends Equatable  {
 
@@ -21,4 +22,20 @@ class ServerFailure extends Failure {
 class DatabaseFailure extends Failure  {
   const DatabaseFailure({required super.message});
 
+}
+
+// for server
+class ServerException implements Exception {
+  final ErrorMessageModel errorMessageModel;
+
+  ServerException({required this.errorMessageModel});
+}
+
+// for local
+class LocalDatabaseException implements Exception {
+  final String message;
+
+  const LocalDatabaseException({
+    required this.message,
+  });
 }
