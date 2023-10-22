@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 import '../repository/network/api_contants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String getDate(String? date) {
   if (date == null || date.isEmpty) {
@@ -116,5 +120,29 @@ String getElapsedTime(String date) {
   } else {
     return 'Now';
   }
+}
+
+Future<void> urlLauncher(Uri url) async {
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
+  }
+}
+
+void showCustomBottomSheet(BuildContext context, Widget child) {
+  final size = MediaQuery.of(context).size.height;
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(20),
+      ),
+    ),
+    builder: (context) {
+      return SizedBox(
+        height: size * 0.5,
+        child: child,
+      );
+    },
+  );
 }
 
