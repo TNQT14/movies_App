@@ -15,9 +15,10 @@ class MoviesScreen extends StatelessWidget {
       create: (context) {
         return sl<MoviesBloc>()
           ..add(GetNowPlayingMoviesEvent())
-          ..add(GetPopularMoviesEvent())
-          ..add(GetTopRatedMoviesEvent())
-          ..add(GetUpcomingMoviesEvent());
+          // ..add(GetPopularMoviesEvent())
+          // ..add(GetTopRatedMoviesEvent())
+          // ..add(GetUpcomingMoviesEvent())
+        ;
       },
       child: Scaffold(
         body: SingleChildScrollView(
