@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import '../../utils/function.dart';
+
 class Review extends Equatable {
   final String authorName;
   final String authorUserName;

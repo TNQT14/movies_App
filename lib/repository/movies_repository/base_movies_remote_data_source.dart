@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import '../../failed/failed.dart';
 import '../../model/error_message_model.dart';
 import '../../model/movies_model/movie_detail.dart';
-import '../../model/movies_model/movies_model.dart';
+import '../../model/movies_model/movies.dart';
 import '../../model/movies_model/movies_recomment.dart';
 import '../../model/movies_model/movies_similar.dart';
 import '../../usecase/movies/get_movie_details_use_case.dart';
