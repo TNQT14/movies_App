@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/repository/services/services_locator.dart';
 import 'package:movies_app/screen/main_screen/main_screen.dart';
 import 'package:movies_app/theme/theme_data/theme_data.dart';
 import 'package:movies_app/utils/enum.dart';
@@ -12,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Wakelock.enable();
   ScreenUtil.ensureScreenSize();
-  // ServiceLocator().init();
+  ServiceLocator().init();
   runApp(const MyApp());
 }
 

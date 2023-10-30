@@ -5,6 +5,9 @@ import '../../bloc/movies_bloc/movies_bloc.dart';
 import '../../bloc/movies_bloc/movies_event.dart';
 import '../../repository/services/services_locator.dart';
 import '../widget/now_playing_widget.dart';
+import '../widget/popular_movies_widget.dart';
+import '../widget/top_rate_widget.dart';
+import '../widget/upcoming_widget.dart';
 
 class MoviesScreen extends StatelessWidget {
   const MoviesScreen({Key? key}) : super(key: key);
@@ -15,9 +18,9 @@ class MoviesScreen extends StatelessWidget {
       create: (context) {
         return sl<MoviesBloc>()
           ..add(GetNowPlayingMoviesEvent())
-          // ..add(GetPopularMoviesEvent())
-          // ..add(GetTopRatedMoviesEvent())
-          // ..add(GetUpcomingMoviesEvent())
+          ..add(GetPopularMoviesEvent())
+          ..add(GetTopRatedMoviesEvent())
+          ..add(GetUpcomingMoviesEvent())
         ;
       },
       child: Scaffold(
@@ -28,9 +31,10 @@ class MoviesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const NowPlayingWidget(),
-              // const UpcomingWidget(),
-              // const PopularMoviesWidget(),
-              // const TopRatedMoviesWidget(),
+              const UpcomingWidget(),
+              const PopularMoviesWidget(),
+              const TopRatedMoviesWidget(),
+              Container(),
             ],
           ),
         ),
