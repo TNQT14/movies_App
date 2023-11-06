@@ -50,8 +50,8 @@ class MoviesSimilarModel extends MoviesSimilar {
 
   factory MoviesSimilarModel.fromJson(Map<String, dynamic> json) {
     return MoviesSimilarModel(
-      overview: json["overview"],
-      id: json["id"],
+      overview: json["description"],
+      id: json["show_id"],
       title: json["title"],
       voteAverage: json["vote_average"].toDouble(),
       genreIds: List<int>.from(json["genre_ids"].map((e) => e)),

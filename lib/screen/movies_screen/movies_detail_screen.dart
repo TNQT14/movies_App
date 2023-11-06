@@ -107,21 +107,21 @@ class MovieDetailContent extends StatelessWidget {
                                           radius: 19.r,
                                           backgroundColor:
                                           AppColorsDark.primaryRedColor,
-                                          child: IconButton(
-                                            onPressed: () {
-                                              urlLauncher(
-                                                Uri.parse(
-                                                  state.moviesDetails
-                                                      ?.trailerUrl ??
-                                                      '',
-                                                ),
-                                              );
-                                            },
-                                            icon: const Icon(
-                                              Icons.play_circle,
-                                              color: AppColorsDark.iconColor,
-                                            ),
-                                          ),
+                                          // child: IconButton(
+                                          //   onPressed: () {
+                                          //     urlLauncher(
+                                          //       Uri.parse(
+                                          //         state.moviesDetails
+                                          //             ?.trailerUrl ??
+                                          //             '',
+                                          //       ),
+                                          //     );
+                                          //   },
+                                          //   icon: const Icon(
+                                          //     Icons.play_circle,
+                                          //     color: AppColorsDark.iconColor,
+                                          //   ),
+                                          // ),
                                         ),
                                         Text(
                                           state.moviesDetails!.title,
@@ -195,12 +195,12 @@ class MovieDetailContent extends StatelessWidget {
                                       style: textTheme.titleMedium,
                                     ),
                                     Space(height: 8.h, width: 0),
-                                    Text(
-                                      'Genres: ${_showGenres(state.moviesDetails!.genres)}',
-                                      style: textTheme.labelSmall!.copyWith(
-                                        color: Colors.grey,
-                                      ),
-                                    ),
+                                    // Text(
+                                    //   'Genres: ${_showGenres(state.moviesDetails!.genres)}',
+                                    //   style: textTheme.labelSmall!.copyWith(
+                                    //     color: Colors.grey,
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),

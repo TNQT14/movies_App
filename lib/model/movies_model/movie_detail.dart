@@ -13,9 +13,9 @@ class MovieDetails extends Equatable {
   final double voteAverage;
   final String releaseDate;
   final int runtime;
-  final List<Genres> genres;
-  final bool adult;
-  final String trailerUrl;
+  // final List<Genres> genres;
+  // final bool adult;
+  // final String trailerUrl;
   final List<Cast>? cast;
   final List<Review>? reviews;
   final bool isAdded;
@@ -25,13 +25,13 @@ class MovieDetails extends Equatable {
     this.id,
     required this.title,
     required this.voteAverage,
-    required this.genres,
+    // required this.genres,
     required this.backdropPath,
     required this.releaseDate,
     required this.posterPath,
-    required this.adult,
+    // required this.adult,
     required this.runtime,
-    required this.trailerUrl,
+    // required this.trailerUrl,
     this.cast,
     this.reviews,
     this.isAdded = false,
@@ -43,12 +43,12 @@ class MovieDetails extends Equatable {
     title,
     backdropPath,
     overview,
-    genres,
+    // genres,
     posterPath,
-    adult,
+    // adult,
     releaseDate,
     runtime,
-    trailerUrl,
+    // trailerUrl,
     isAdded,
   ];
 }
@@ -62,10 +62,10 @@ class MovieDetailsModel extends MovieDetails {
     required super.backdropPath,
     required super.releaseDate,
     required super.posterPath,
-    required super.adult,
-    required super.genres,
+    // required super.adult,
+    // required super.genres,
     required super.runtime,
-    required super.trailerUrl,
+    // required super.trailerUrl,
     required super.cast,
     required super.reviews,
   });
@@ -79,10 +79,10 @@ class MovieDetailsModel extends MovieDetails {
       voteAverage: movieDetails.voteAverage,
       releaseDate: movieDetails.releaseDate,
       overview: movieDetails.overview,
-      adult: movieDetails.adult,
-      genres: movieDetails.genres,
+      // adult: movieDetails.adult,
+      // genres: movieDetails.genres,
       runtime: movieDetails.runtime,
-      trailerUrl: movieDetails.trailerUrl,
+      // trailerUrl: movieDetails.trailerUrl,
       cast: movieDetails.cast,
       reviews: movieDetails.reviews,
     );
@@ -90,20 +90,20 @@ class MovieDetailsModel extends MovieDetails {
 
   factory MovieDetailsModel.fromJson(Map<String, dynamic> json) {
     return MovieDetailsModel(
-      overview: json["overview"],
-      id: json["id"],
+      overview: json["description"],
+      id: int.parse(json["show_id"]),
       title: json["title"],
-      voteAverage: json["vote_average"].toDouble(),
-      backdropPath: json["backdrop_path"] ?? '',
-      releaseDate: json["release_date"],
-      posterPath: json["poster_path"] ?? '',
-      adult: json['adult'],
-      genres: List<GenresModel>.from(
-          json["genres"].map((e) => GenresModel.fromJson(e))),
-      runtime: json["runtime"],
-      trailerUrl: getTrailerUrl(json),
+      voteAverage: double.parse(json["release_year"]),
+      backdropPath: json["backdrop_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      releaseDate: json["date_added"],
+      posterPath: json["poster_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      // adult: json['adult'],
+      // genres: List<GenresModel>.from(
+      //     json["genres"].map((e) => GenresModel.fromJson(e))),
+      runtime: json["duration"],
+      // trailerUrl: getTrailerUrl(json),
       cast: List<CastModel>.from(
-          (json['credits']['cast'] as List).map((e) => CastModel.fromJson(e))),
+          (json['cast'] as List).map((e) => CastModel.fromJson(e))),
       reviews: List<ReviewModel>.from((json['reviews']['results'] as List)
           .map((e) => ReviewModel.fromJson(e))),
     );

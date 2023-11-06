@@ -14,7 +14,7 @@ class ImageWithShimmer extends StatelessWidget {
     this.boxFit,
   });
 
-  final String imageUrl;
+  final String? imageUrl;
   final double height;
   final double width;
   final BoxFit? boxFit;
@@ -22,7 +22,7 @@ class ImageWithShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: imageUrl,
+      imageUrl: imageUrl ?? '',
       height: height,
       width: width,
       fit: boxFit ?? BoxFit.cover,

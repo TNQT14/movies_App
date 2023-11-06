@@ -15,7 +15,7 @@ class ApiConstance {
 
   /// API Constance For Movies
   static const String nowPlayingMoviesPath =
-      "$baseUrl/movie/now_playing?api_key=$appKey";
+      "http://172.17.16.138:10000/1";
 
   static const String upcomingMoviesPath =
       "$baseUrl/movie/upcoming?api_key=$appKey";
@@ -26,8 +26,10 @@ class ApiConstance {
   static const String topRatedMoviesPath =
       "$baseUrl/movie/top_rated?api_key=$appKey";
 
+  // static String movieDetailsPath(int movieID) =>
+  //     "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
   static String movieDetailsPath(int movieID) =>
-      "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
+      "http://172.17.16.138:10000/1";
 
   static String movieRecommendationPath(int movieID) =>
       "$baseUrl/movie/$movieID/recommendations?api_key=$appKey";

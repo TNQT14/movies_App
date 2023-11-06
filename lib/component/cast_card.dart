@@ -24,7 +24,8 @@ class CastCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8).r,
             child: ImageWithShimmer(
-              imageUrl: cast.profileUrl,
+              // imageUrl: cast.profileUrl,
+              imageUrl: ' ',
               width: double.infinity,
               height: 100.h,
             ),
