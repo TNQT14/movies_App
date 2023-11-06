@@ -39,6 +39,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getNowPlayingMovies() async {
     final response = await Dio().get(ApiConstance.nowPlayingMoviesPath);
     if (response.statusCode == 200) {
+      print('Call API getNowPlayingMovies');
       return List<MovieModel>.from((response.data["results"] as List).map(
             (e) => MovieModel.fromJson(e),
       ));
@@ -53,6 +54,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getUpcomingMovies() async {
     final response = await Dio().get(ApiConstance.upcomingMoviesPath);
     if (response.statusCode == 200) {
+      print('Call API getUpcomingMovies');
       return List<MovieModel>.from((response.data["results"] as List).map(
             (e) => MovieModel.fromJson(e),
       ));
@@ -67,6 +69,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getPopularMovies() async {
     final response = await Dio().get(ApiConstance.popularMoviesPath);
     if (response.statusCode == 200) {
+      print('Call API getPopularMovies');
       return List<MovieModel>.from((response.data["results"] as List).map(
             (e) => MovieModel.fromJson(e),
       ));
@@ -81,6 +84,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getTopRatedMovies() async {
     final response = await Dio().get(ApiConstance.topRatedMoviesPath);
     if (response.statusCode == 200) {
+      print('Call API getTopRatedMovies');
       return List<MovieModel>.from((response.data["results"] as List).map(
             (e) => MovieModel.fromJson(e),
       ));
@@ -97,6 +101,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response =
     await Dio().get(ApiConstance.movieDetailsPath(parameters.movieID));
     if (response.statusCode == 200) {
+      print('Call API getMovieDetails');
       return MovieDetailsModel.fromJson(response.data);
     } else {
       throw ServerException(
@@ -111,6 +116,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response = await Dio()
         .get(ApiConstance.movieRecommendationPath(parameters.movieID));
     if (response.statusCode == 200) {
+      print('Call API getMovieRecommendation');
       return List<MoviesRecommendationModel>.from(
           (response.data["results"] as List).map(
                 (e) => MoviesRecommendationModel.fromJson(e),
@@ -128,6 +134,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response =
     await Dio().get(ApiConstance.movieSimilarPath(parameters.movieID));
     if (response.statusCode == 200) {
+      print('Call API getMovieSimilar');
       return List<MoviesSimilarModel>.from(
           (response.data["results"] as List).map(
                 (e) => MoviesSimilarModel.fromJson(e),
@@ -154,6 +161,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
 
   @override
   Future<List<MovieModel>> getAllPopularMovies(int page) async {
+    print('Call API getAllPopularMovies');
     final response =
     await Dio().get(ApiConstance.getAllPopularMoviesPath(page));
     if (response.statusCode == 200) {
@@ -171,7 +179,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response =
     await Dio().get(ApiConstance.getAllTopRatedMoviesPath(page));
     if (response.statusCode == 200) {
-      print('Call API');
+      print('Call API getAllTopRatedMovies');
       return List<MovieModel>.from((response.data['results'] as List)
           .map((e) => MovieModel.fromJson(e)));
     } else {
