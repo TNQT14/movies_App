@@ -18,17 +18,18 @@ class ApiConstance {
       "http://192.168.2.22:9000/1";
 
   static const String upcomingMoviesPath =
-      "http://172.17.18.68:9000/1";
+      "http://192.168.2.22:9000/1";
 
   static const String popularMoviesPath =
-      "http://172.17.18.68:9000/1";
+      "http://192.168.2.22:9000/1";
 
   static const String topRatedMoviesPath =
-      "http://172.17.18.68:9000/1";
+      "$baseUrl/movie/top_rated?api_key=$appKey";
 
   // static String movieDetailsPath(int movieID) =>
   //     "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
   static String movieDetailsPath(int movieID) =>
+      // "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
       "http://192.168.2.22:9000/81145628";
 
   static String movieRecommendationPath(int movieID) =>

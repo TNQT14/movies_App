@@ -64,7 +64,7 @@ class MovieModel extends Movies {
       backdropPath: json["backdrop_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
       releaseDate: getDate(json['date_added']),
       posterPath: json["poster_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
-      // adult: json['adult'],
+      // adult: json['adu lt'],
     );
   }
 }

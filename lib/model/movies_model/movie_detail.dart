@@ -16,8 +16,8 @@ class MovieDetails extends Equatable {
   // final List<Genres> genres;
   // final bool adult;
   // final String trailerUrl;
-  final List<Cast>? cast;
-  final List<Review>? reviews;
+  // final List<Cast>? cast;
+  // final List<Review>? reviews;
   final bool isAdded;
 
   const MovieDetails({
@@ -32,8 +32,8 @@ class MovieDetails extends Equatable {
     // required this.adult,
     required this.runtime,
     // required this.trailerUrl,
-    this.cast,
-    this.reviews,
+    // this.cast,
+    // this.reviews,
     this.isAdded = false,
   });
 
@@ -41,13 +41,13 @@ class MovieDetails extends Equatable {
   List<Object?> get props => [
     id,
     title,
-    backdropPath,
+    // backdropPath,
     overview,
     // genres,
-    posterPath,
+    // posterPath,
     // adult,
-    releaseDate,
-    runtime,
+    // releaseDate,
+    // runtime,
     // trailerUrl,
     isAdded,
   ];
@@ -66,8 +66,8 @@ class MovieDetailsModel extends MovieDetails {
     // required super.genres,
     required super.runtime,
     // required super.trailerUrl,
-    required super.cast,
-    required super.reviews,
+    // required super.cast,
+    // required super.reviews,
   });
 
   factory MovieDetailsModel.fromMediaDetails(MovieDetails movieDetails) {
@@ -83,8 +83,8 @@ class MovieDetailsModel extends MovieDetails {
       // genres: movieDetails.genres,
       runtime: movieDetails.runtime,
       // trailerUrl: movieDetails.trailerUrl,
-      cast: movieDetails.cast,
-      reviews: movieDetails.reviews,
+      // cast: movieDetails.cast,
+      // reviews: movieDetails.reviews,
     );
   }
 
@@ -102,10 +102,11 @@ class MovieDetailsModel extends MovieDetails {
       //     json["genres"].map((e) => GenresModel.fromJson(e))),
       runtime: json["duration"],
       // trailerUrl: getTrailerUrl(json),
-      cast: List<CastModel>.from(
-          (json['cast'] as List).map((e) => CastModel.fromJson(e))),
-      reviews: List<ReviewModel>.from((json['reviews']['results'] as List)
-          .map((e) => ReviewModel.fromJson(e))),
+      // trailerUrl: getTrailerUrl(json),
+      // cast: List<CastModel>.from(
+      //     (json['cast'] as List).map((e) => CastModel.fromJson(e))),
+      // reviews: List<ReviewModel>.from((json['reviews']['results'] as List)
+      //     .map((e) => ReviewModel.fromJson(e))),
     );
   }
 }

@@ -208,56 +208,56 @@ class MovieDetailContent extends StatelessWidget {
                           ),
                         ),
                       ),
-                      FadeInUp(
-                        from: 20,
-                        duration: const Duration(milliseconds: 500),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12).r,
-                          child: Text(
-                            AppString.cast,
-                            style: textTheme.labelLarge,
-                          ),
-                        ),
-                      ),
-                      _getCast(state.moviesDetails!.cast),
-                      FadeInUp(
-                        from: 20,
-                        duration: const Duration(milliseconds: 500),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12).r,
-                          child: Text(
-                            AppString.reviews,
-                            style: textTheme.labelLarge,
-                          ),
-                        ),
-                      ),
-                      _getReviews(state.moviesDetails!.reviews),
-                      Space(height: 18.h, width: 0),
-                      FadeInUp(
-                        from: 20,
-                        duration: const Duration(milliseconds: 500),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12).r,
-                          child: Text(
-                            AppString.recommendations,
-                            style: textTheme.labelLarge,
-                          ),
-                        ),
-                      ),
-                      _showRecommendations(),
-                      Space(height: 18.h, width: 0),
-                      FadeInUp(
-                        from: 20,
-                        duration: const Duration(milliseconds: 500),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0).r,
-                          child: Text(
-                            AppString.moreLikeThis,
-                            style: textTheme.labelLarge,
-                          ),
-                        ),
-                      ),
-                      _showSimilar(),
+                      // FadeInUp(
+                      //   from: 20,
+                      //   duration: const Duration(milliseconds: 500),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(12).r,
+                      //     child: Text(
+                      //       AppString.cast,
+                      //       style: textTheme.labelLarge,
+                      //     ),
+                      //   ),
+                      // ),
+                      // // _getCast(state.moviesDetails!.cast),
+                      // FadeInUp(
+                      //   from: 20,
+                      //   duration: const Duration(milliseconds: 500),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(12).r,
+                      //     child: Text(
+                      //       AppString.reviews,
+                      //       style: textTheme.labelLarge,
+                      //     ),
+                      //   ),
+                      // ),
+                      // // _getReviews(state.moviesDetails!.reviews),
+                      // Space(height: 18.h, width: 0),
+                      // FadeInUp(
+                      //   from: 20,
+                      //   duration: const Duration(milliseconds: 500),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(12).r,
+                      //     child: Text(
+                      //       AppString.recommendations,
+                      //       style: textTheme.labelLarge,
+                      //     ),
+                      //   ),
+                      // ),
+                      // _showRecommendations(),
+                      // Space(height: 18.h, width: 0),
+                      // FadeInUp(
+                      //   from: 20,
+                      //   duration: const Duration(milliseconds: 500),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(12.0).r,
+                      //     child: Text(
+                      //       AppString.moreLikeThis,
+                      //       style: textTheme.labelLarge,
+                      //     ),
+                      //   ),
+                      // ),
+                      // _showSimilar(),
                       Space(height: 20.h, width: 0),
                     ],
                   ),
@@ -300,18 +300,18 @@ class MovieDetailContent extends StatelessWidget {
     );
   }
 
-  String _showGenres(List<Genres> genres) {
-    String result = '';
-    for (var genre in genres) {
-      result += '${genre.name}, ';
-    }
-
-    if (result.isEmpty) {
-      return result;
-    }
-
-    return result.substring(0, result.length - 2);
-  }
+  // String _showGenres(List<Genres> genres) {
+  //   String result = '';
+  //   for (var genre in genres) {
+  //     result += '${genre.name}, ';
+  //   }
+  //
+  //   if (result.isEmpty) {
+  //     return result;
+  //   }
+  //
+  //   return result.substring(0, result.length - 2);
+  // }
 
   String _showDuration(int runtime) {
     final int hours = runtime ~/ 60;
