@@ -15,21 +15,21 @@ class ApiConstance {
 
   /// API Constance For Movies
   static const String nowPlayingMoviesPath =
-      "http://172.17.18.68:10000/1";
+      "http://192.168.2.22:9000/1";
 
   static const String upcomingMoviesPath =
-      "http://172.17.18.68:10000/1";
+      "http://172.17.18.68:9000/1";
 
   static const String popularMoviesPath =
-      "http://172.17.18.68:10000/1";
+      "http://172.17.18.68:9000/1";
 
   static const String topRatedMoviesPath =
-      "http://172.17.18.68:10000/1";
+      "http://172.17.18.68:9000/1";
 
   // static String movieDetailsPath(int movieID) =>
   //     "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
   static String movieDetailsPath(int movieID) =>
-      "http://172.17.18.68:10000/1";
+      "http://192.168.2.22:9000/81145628";
 
   static String movieRecommendationPath(int movieID) =>
       "$baseUrl/movie/$movieID/recommendations?api_key=$appKey";
