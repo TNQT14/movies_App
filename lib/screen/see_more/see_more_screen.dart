@@ -77,7 +77,7 @@ class SeeMoreScreen extends StatelessWidget {
                         Text(
                           movie.title,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
+                          maxLines: 2,
                           textAlign: TextAlign.start,
                           style: textTheme.labelLarge,
                         ),
@@ -118,7 +118,7 @@ class SeeMoreScreen extends StatelessWidget {
                         Space(height: 10.h, width: 0),
                         Text(
                           movieList[index].overview,
-                          maxLines: 2,
+                          maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                           style: textTheme.titleMedium,
                         ),

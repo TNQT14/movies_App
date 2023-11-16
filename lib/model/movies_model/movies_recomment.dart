@@ -54,7 +54,7 @@ class MoviesRecommendationModel extends MoviesRecommendation {
       overview: json["description"],
       id: json["show_id"],
       title: json["title"],
-      voteAverage: (json["release_year"] as int).toDouble() ,
+      voteAverage: json["weight"]?.toDouble() ?? 0.0,
       // genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
       backdropPath: json["backdrop_path"] ?? '',
       releaseDate: json["date_added"],

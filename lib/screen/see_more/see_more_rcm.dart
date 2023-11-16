@@ -78,7 +78,7 @@ class SeeMoreScreenRCM extends StatelessWidget {
                         Text(
                           movie.title,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
+                          maxLines: 3,
                           textAlign: TextAlign.start,
                           style: textTheme.labelLarge,
                         ),
@@ -95,7 +95,7 @@ class SeeMoreScreenRCM extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.0).r,
                               ),
                               child: Text(
-                                movie.releaseDate.split('-')[0],
+                                'Weight: ${movie!.voteAverage.toStringAsFixed(6)}',
                                 style: textTheme.titleSmall,
                               ),
                             ),
@@ -119,7 +119,7 @@ class SeeMoreScreenRCM extends StatelessWidget {
                         Space(height: 10.h, width: 0),
                         Text(
                           movieList[index].overview,
-                          maxLines: 2,
+                          maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                           style: textTheme.titleMedium,
                         ),
