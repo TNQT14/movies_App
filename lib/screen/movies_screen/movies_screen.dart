@@ -32,8 +32,8 @@ class MoviesScreen extends StatelessWidget {
             children: [
               const NowPlayingWidget(),
               const UpcomingWidget(),
-              const PopularMoviesWidget(),
-              const TopRatedMoviesWidget(),
+              Container(),
+              Container(),
               Container(),
             ],
           ),

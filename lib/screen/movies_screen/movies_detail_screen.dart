@@ -22,6 +22,8 @@ import '../../theme/app_color/app_color_dark.dart';
 import '../../theme/theme_data/theme_data.dart';
 import '../../utils/enum.dart';
 import '../../utils/function.dart';
+import '../see_more/see_more_rcm.dart';
+import '../see_more/see_more_screen.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   final int movieID;
@@ -233,17 +235,55 @@ class MovieDetailContent extends StatelessWidget {
                       // ),
                       // // _getReviews(state.moviesDetails!.reviews),
                       Space(height: 18.h, width: 0),
-                      FadeInUp(
-                        from: 20,
-                        duration: const Duration(milliseconds: 500),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12).r,
-                          child: Text(
-                            AppString.recommendations,
-                            style: textTheme.labelLarge,
+                      Row(
+                        children: [
+                          FadeInUp(
+                            from: 20,
+                            duration: const Duration(milliseconds: 500),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12).r,
+                              child: Text(
+                                AppString.recommendations,
+                                style: textTheme.labelLarge,
+                              ),
+                            ),
                           ),
-                        ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return
+                                      // Container();
+                                      SeeMoreScreenRCM(
+                                      movieList: state.moviesRecommendation,
+                                      title: AppString.recommendations,
+                                    );
+                                  },
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0).r,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    AppString.seeMore,
+                                    style: textTheme.labelSmall,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 16.sp,
+                                    color: AppColorsDark.iconColor,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
+
                       _showRecommendations(),
                       // Space(height: 18.h, width: 0),
                       // FadeInUp(
@@ -348,14 +388,15 @@ class MovieDetailContent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8).r,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MovieDetailsScreen(
-                                movieID: recommendation.id,
-                              ),
-                            ),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => MovieDetailsScreen(
+                          //       movieID: recommendation.id,
+                          //         // recommendation.id
+                          //     ),
+                          //   ),
+                          // );
                           if (kDebugMode) {
                             print(recommendation.id);
                           }
