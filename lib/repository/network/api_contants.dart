@@ -8,7 +8,7 @@ class ApiConstance {
   // static const String baseImageURL = "https://image.tmdb.org/t/p/w500";
   static const String baseImageURL = "";
 
-  static const String host = "http://172.17.18.50:9000/";
+  static const String host = "http://172.17.17.203:9000";
 
   static const String castPlaceHolder =
       'https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png';

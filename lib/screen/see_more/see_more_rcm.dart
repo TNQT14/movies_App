@@ -100,20 +100,20 @@ class SeeMoreScreenRCM extends StatelessWidget {
                               ),
                             ),
                             Space(height: 0, width: 16.w),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: AppColorsDark.iconRateColor,
-                                  size: 20.sp,
-                                ),
-                                Space(height: 0, width: 4.w),
-                                Text(
-                                  (movie.voteAverage).toStringAsFixed(1),
-                                  style: textTheme.titleMedium,
-                                ),
-                              ],
-                            ),
+                            // Row(
+                            //   children: [
+                            //     Icon(
+                            //       Icons.star,
+                            //       color: AppColorsDark.iconRateColor,
+                            //       size: 20.sp,
+                            //     ),
+                            //     Space(height: 0, width: 4.w),
+                            //     Text(
+                            //       (movie.voteAverage).toStringAsFixed(1),
+                            //       style: textTheme.titleMedium,
+                            //     ),
+                            //   ],
+                            // ),
                           ],
                         ),
                         Space(height: 10.h, width: 0),

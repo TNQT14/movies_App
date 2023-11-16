@@ -147,28 +147,29 @@ class MovieDetailContent extends StatelessWidget {
                                               ),
                                               child: Text(
                                                 state.moviesDetails!.releaseDate
-                                                    .split('-')[0],
+                                                    .split('s')[0],
                                                 style: textTheme.labelMedium,
                                               ),
                                             ),
                                             Space(height: 0, width: 16.w),
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.star,
-                                                  color: AppColorsDark
-                                                      .iconRateColor,
-                                                  size: 20.0.sp,
-                                                ),
-                                                Space(height: 0, width: 4.w),
-                                                Text(
-                                                  (state.moviesDetails!
-                                                      .voteAverage)
-                                                      .toStringAsFixed(1),
-                                                  style: textTheme.labelMedium,
-                                                ),
-                                              ],
-                                            ),
+
+                                            // Row(
+                                            //   children: [
+                                            //     Icon(
+                                            //       Icons.star,
+                                            //       color: AppColorsDark
+                                            //           .iconRateColor,
+                                            //       size: 20.0.sp,
+                                            //     ),
+                                            //     Space(height: 0, width: 4.w),
+                                            //     Text(
+                                            //       (state.moviesDetails!
+                                            //           .voteAverage)
+                                            //           .toStringAsFixed(1),
+                                            //       style: textTheme.labelMedium,
+                                            //     ),
+                                            //   ],
+                                            // ),
                                             Space(height: 0, width: 16.w),
                                             Expanded(
                                               child: Text(
