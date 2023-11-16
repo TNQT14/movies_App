@@ -6,21 +6,21 @@ class MoviesRecommendation extends Equatable {
   final String overview;
   final double voteAverage;
   final String releaseDate;
-  final List<int> genreIds;
+  // final List<int> genreIds;
   final String? backdropPath;
   final String? posterPath;
-  final bool adult;
+  // final bool adult;
 
   const MoviesRecommendation({
     required this.overview,
     required this.id,
     required this.title,
     required this.voteAverage,
-    required this.genreIds,
+    // required this.genreIds,
     this.backdropPath,
     required this.releaseDate,
     this.posterPath,
-    required this.adult,
+    // required this.adult,
   });
 
   @override
@@ -29,9 +29,9 @@ class MoviesRecommendation extends Equatable {
     title,
     backdropPath,
     overview,
-    genreIds,
+    // genreIds,
     posterPath,
-    adult,
+    // adult,
     releaseDate,
   ];
 }
@@ -42,23 +42,26 @@ class MoviesRecommendationModel extends MoviesRecommendation {
         required super.id,
         required super.title,
         required super.voteAverage,
-        required super.genreIds,
+        // required super.genreIds,
         super.backdropPath,
         required super.releaseDate,
         super.posterPath,
-        required super.adult});
+        // required super.adult
+      });
 
   factory MoviesRecommendationModel.fromJson(Map<String, dynamic> json) {
     return MoviesRecommendationModel(
-      overview: json["overview"],
-      id: json["id"],
+      overview: json["description"],
+      id: json["show_id"],
       title: json["title"],
-      voteAverage: json["vote_average"].toDouble(),
-      genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
+      voteAverage: (json["release_year"] as int).toDouble() ,
+      // genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
       backdropPath: json["backdrop_path"] ?? '',
-      releaseDate: json["release_date"],
+      releaseDate: json["date_added"],
       posterPath: json["poster_path"] ?? '',
-      adult: json['adult'],
+      // adult: json['adult'],
+
+
     );
   }
 }

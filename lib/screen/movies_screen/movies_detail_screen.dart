@@ -232,19 +232,19 @@ class MovieDetailContent extends StatelessWidget {
                       //   ),
                       // ),
                       // // _getReviews(state.moviesDetails!.reviews),
-                      // Space(height: 18.h, width: 0),
-                      // FadeInUp(
-                      //   from: 20,
-                      //   duration: const Duration(milliseconds: 500),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12).r,
-                      //     child: Text(
-                      //       AppString.recommendations,
-                      //       style: textTheme.labelLarge,
-                      //     ),
-                      //   ),
-                      // ),
-                      // _showRecommendations(),
+                      Space(height: 18.h, width: 0),
+                      FadeInUp(
+                        from: 20,
+                        duration: const Duration(milliseconds: 500),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12).r,
+                          child: Text(
+                            AppString.recommendations,
+                            style: textTheme.labelLarge,
+                          ),
+                        ),
+                      ),
+                      _showRecommendations(),
                       // Space(height: 18.h, width: 0),
                       // FadeInUp(
                       //   from: 20,

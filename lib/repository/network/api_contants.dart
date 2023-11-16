@@ -5,7 +5,10 @@ class ApiConstance {
   static const String baseStillUrl = 'https://image.tmdb.org/t/p/w500';
   static const String baseAvatarUrl = 'https://image.tmdb.org/t/p/w185';
   static const String baseVideoUrl = 'https://www.youtube.com/watch?v=';
-  static const String baseImageURL = "https://image.tmdb.org/t/p/w500";
+  // static const String baseImageURL = "https://image.tmdb.org/t/p/w500";
+  static const String baseImageURL = "";
+
+  static const String host = "http://172.17.18.50:9000/";
 
   static const String castPlaceHolder =
       'https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png';
@@ -15,13 +18,13 @@ class ApiConstance {
 
   /// API Constance For Movies
   static const String nowPlayingMoviesPath =
-      "http://192.168.2.22:9000/1";
+      "$host/api/netflix?page=1";
 
   static const String upcomingMoviesPath =
-      "http://192.168.2.22:9000/1";
+      "$host/api/netflix?page=1";
 
   static const String popularMoviesPath =
-      "http://192.168.2.22:9000/1";
+      "$host/api/netflix?page=1";
 
   static const String topRatedMoviesPath =
       "$baseUrl/movie/top_rated?api_key=$appKey";
@@ -30,10 +33,10 @@ class ApiConstance {
   //     "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
   static String movieDetailsPath(int movieID) =>
       // "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
-      "http://192.168.2.22:9000/81145628";
+      "$host/api/netflix/$movieID";
 
   static String movieRecommendationPath(int movieID) =>
-      "$baseUrl/movie/$movieID/recommendations?api_key=$appKey";
+      "$host/api/$movieID/recommendations";
 
   static String movieSimilarPath(int movieID) =>
       "$baseUrl/movie/$movieID/similar?api_key=$appKey";

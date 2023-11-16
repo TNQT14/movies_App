@@ -94,9 +94,9 @@ class MovieDetailsModel extends MovieDetails {
       id: int.parse(json["show_id"]),
       title: json["title"],
       voteAverage: double.parse(json["release_year"]),
-      backdropPath: json["backdrop_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      backdropPath: json["backdrop_path"] ?? 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg?fbclid=IwAR2LAgz1UrQ185puuW4TzL-1HOzKtElkVyDssMDcfPCMHS5CmcZ58o7bt9U',
       releaseDate: json["date_added"],
-      posterPath: json["poster_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      posterPath: json["poster_path"] ?? 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg?fbclid=IwAR2LAgz1UrQ185puuW4TzL-1HOzKtElkVyDssMDcfPCMHS5CmcZ58o7bt9U',
       // adult: json['adult'],
       // genres: List<GenresModel>.from(
       //     json["genres"].map((e) => GenresModel.fromJson(e))),

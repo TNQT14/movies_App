@@ -61,9 +61,9 @@ class MovieModel extends Movies {
       title: json["title"],
       voteAverage: double.parse(json["release_year"]),
       // genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
-      backdropPath: json["backdrop_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      backdropPath: json["backdrop_path"] ?? 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg?fbclid=IwAR2LAgz1UrQ185puuW4TzL-1HOzKtElkVyDssMDcfPCMHS5CmcZ58o7bt9U',
       releaseDate: getDate(json['date_added']),
-      posterPath: json["poster_path"] ?? '/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg',
+      posterPath: json["poster_path"] ?? 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg?fbclid=IwAR2LAgz1UrQ185puuW4TzL-1HOzKtElkVyDssMDcfPCMHS5CmcZ58o7bt9U',
       // adult: json['adu lt'],
     );
   }
