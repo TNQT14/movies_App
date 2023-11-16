@@ -1,11 +1,8 @@
 class ApiConstance {
-  static const String baseUrl = "https://api.themoviedb.org/3";
-  static const String appKey = "f9f2187654bf478a79a1bda499324c2c";
   static const String baseProfileUrl = 'https://image.tmdb.org/t/p/w300';
   static const String baseStillUrl = 'https://image.tmdb.org/t/p/w500';
   static const String baseAvatarUrl = 'https://image.tmdb.org/t/p/w185';
   static const String baseVideoUrl = 'https://www.youtube.com/watch?v=';
-  // static const String baseImageURL = "https://image.tmdb.org/t/p/w500";
   static const String baseImageURL = "";
 
   static const String host = "http://172.17.17.203:9000";
@@ -27,58 +24,26 @@ class ApiConstance {
       "$host/api/netflix?page=1";
 
   static const String topRatedMoviesPath =
-      "$baseUrl/movie/top_rated?api_key=$appKey";
+      "";
 
-  // static String movieDetailsPath(int movieID) =>
-  //     "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
   static String movieDetailsPath(int movieID) =>
-      // "$baseUrl/movie/$movieID?api_key=$appKey&append_to_response=videos,credits,reviews,similar";
       "$host/api/netflix/$movieID";
 
   static String movieRecommendationPath(int movieID) =>
       "$host/api/$movieID/recommendations";
 
   static String movieSimilarPath(int movieID) =>
-      "$baseUrl/movie/$movieID/similar?api_key=$appKey";
+      "";
 
   static String getAllPopularMoviesPath(int page) {
-    return '$baseUrl/movie/popular?api_key=$appKey&page=$page';
+    return '';
   }
 
   static String getAllTopRatedMoviesPath(int page) {
-    return '$baseUrl/movie/top_rated?api_key=$appKey&page=$page';
+    return '';
   }
 
   /// API Constance For Base Image URL
-  static String imageURL(String imagePath) => '$baseImageURL$imagePath';
+  static String imageURL(String imagePath) => '$imagePath';
 
-  /// API Constance For TV
-  static const String onTheAirTvPath =
-      "$baseUrl/tv/on_the_air?api_key=$appKey&with_original_language=en";
-
-  static const String airingTodayTvPath =
-      "$baseUrl/tv/airing_today?api_key=$appKey&page=2";
-
-  static const String popularTvsPath =
-      "$baseUrl/tv/popular?api_key=$appKey&with_original_language=en";
-
-  static const String topRatedTvsPath =
-      "$baseUrl/tv/top_rated?api_key=$appKey&with_original_language=en";
-
-  static String tvDetailsPath(int tvID) =>
-      "$baseUrl/tv/$tvID?api_key=$appKey&append_to_response=similar,videos";
-
-  static String tvRecommendationPath(int tvID) =>
-      "$baseUrl/tv/$tvID/recommendations?api_key=$appKey";
-
-  static String tvSimilarPath(int tvID) =>
-      "$baseUrl/tv/$tvID/similar?api_key=$appKey";
-
-  static String tvSeasonPath(int tvID, int numberOfSeason) =>
-      "$baseUrl/tv/$tvID/season/$numberOfSeason?api_key=$appKey";
-
-  /// API Constance For Search
-  static String getSearchPath(String title) {
-    return '$baseUrl/search/multi?api_key=$appKey&query=$title';
-  }
 }

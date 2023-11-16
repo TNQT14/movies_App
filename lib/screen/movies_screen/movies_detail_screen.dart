@@ -3,27 +3,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../bloc/movie_detail_bloc/movie_detail_bloc.dart';
 import '../../bloc/movie_detail_bloc/movie_detail_event.dart';
 import '../../bloc/movie_detail_bloc/movies_detail_state.dart';
-import '../../component/cast_card.dart';
+
 import '../../component/image_with_simmer.dart';
 import '../../component/loading_indicator.dart';
-import '../../component/review_card.dart';
 import '../../component/space.dart';
 import '../../contants/app_string.dart';
-import '../../model/movies_model/cast.dart';
-import '../../model/movies_model/genres.dart';
-import '../../model/movies_model/review.dart';
 import '../../repository/network/api_contants.dart';
 import '../../repository/services/services_locator.dart';
 import '../../theme/app_color/app_color_dark.dart';
 import '../../theme/theme_data/theme_data.dart';
 import '../../utils/enum.dart';
-import '../../utils/function.dart';
 import '../see_more/see_more_rcm.dart';
-import '../see_more/see_more_screen.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   final int movieID;
@@ -109,21 +102,9 @@ class MovieDetailContent extends StatelessWidget {
                                           radius: 19.r,
                                           backgroundColor:
                                           AppColorsDark.primaryRedColor,
-                                          // child: IconButton(
-                                          //   onPressed: () {
-                                          //     urlLauncher(
-                                          //       Uri.parse(
-                                          //         state.moviesDetails
-                                          //             ?.trailerUrl ??
-                                          //             '',
-                                          //       ),
-                                          //     );
-                                          //   },
-                                          //   icon: const Icon(
-                                          //     Icons.play_circle,
-                                          //     color: AppColorsDark.iconColor,
-                                          //   ),
-                                          // ),
+                                          child: IconButton(
+                                            icon: Icon(Icons.play_circle),
+                                            onPressed: () {  },),
                                         ),
                                         Text(
                                           state.moviesDetails!.title,
@@ -152,25 +133,6 @@ class MovieDetailContent extends StatelessWidget {
                                               ),
                                             ),
                                             Space(height: 0, width: 16.w),
-
-                                            // Row(
-                                            //   children: [
-                                            //     Icon(
-                                            //       Icons.star,
-                                            //       color: AppColorsDark
-                                            //           .iconRateColor,
-                                            //       size: 20.0.sp,
-                                            //     ),
-                                            //     Space(height: 0, width: 4.w),
-                                            //     Text(
-                                            //       (state.moviesDetails!
-                                            //           .voteAverage)
-                                            //           .toStringAsFixed(1),
-                                            //       style: textTheme.labelMedium,
-                                            //     ),
-                                            //   ],
-                                            // ),
-                                            Space(height: 0, width: 16.w),
                                             Expanded(
                                               child: Text(
                                                 _showDuration(state
@@ -198,12 +160,6 @@ class MovieDetailContent extends StatelessWidget {
                                       style: textTheme.titleMedium,
                                     ),
                                     Space(height: 8.h, width: 0),
-                                    // Text(
-                                    //   'Genres: ${_showGenres(state.moviesDetails!.genres)}',
-                                    //   style: textTheme.labelSmall!.copyWith(
-                                    //     color: Colors.grey,
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                               ),
@@ -211,32 +167,9 @@ class MovieDetailContent extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // FadeInUp(
-                      //   from: 20,
-                      //   duration: const Duration(milliseconds: 500),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12).r,
-                      //     child: Text(
-                      //       AppString.cast,
-                      //       style: textTheme.labelLarge,
-                      //     ),
-                      //   ),
-                      // ),
-                      // // _getCast(state.moviesDetails!.cast),
-                      // FadeInUp(
-                      //   from: 20,
-                      //   duration: const Duration(milliseconds: 500),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12).r,
-                      //     child: Text(
-                      //       AppString.reviews,
-                      //       style: textTheme.labelLarge,
-                      //     ),
-                      //   ),
-                      // ),
-                      // // _getReviews(state.moviesDetails!.reviews),
                       Space(height: 18.h, width: 0),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           FadeInUp(
                             from: 20,
@@ -286,19 +219,6 @@ class MovieDetailContent extends StatelessWidget {
                       ),
 
                       _showRecommendations(),
-                      // Space(height: 18.h, width: 0),
-                      // FadeInUp(
-                      //   from: 20,
-                      //   duration: const Duration(milliseconds: 500),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12.0).r,
-                      //     child: Text(
-                      //       AppString.moreLikeThis,
-                      //       style: textTheme.labelLarge,
-                      //     ),
-                      //   ),
-                      // ),
-                      // _showSimilar(),
                       Space(height: 20.h, width: 0),
                     ],
                   ),
@@ -440,112 +360,6 @@ class MovieDetailContent extends StatelessWidget {
         }
       },
     );
-  }
-
-  Widget _showSimilar() {
-    final textTheme = getThemeData[AppTheme.darkTheme]!.textTheme;
-    return BlocBuilder<MoviesDetailsBloc, MoviesDetailsStates>(
-      builder: (context, state) {
-        switch (state.moviesSimilarStates) {
-          case RequestState.loading:
-            return SizedBox(
-              height: 300.h,
-              child: const LoadingIndicator(),
-            );
-          case RequestState.loaded:
-            return FadeIn(
-              duration: const Duration(milliseconds: 500),
-              child: SizedBox(
-                height: 170.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16).r,
-                  itemCount: state.moviesSimilar.length,
-                  itemBuilder: (context, index) {
-                    final similar = state.moviesSimilar[index];
-                    return Container(
-                      padding: const EdgeInsets.only(right: 8).r,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MovieDetailsScreen(
-                                movieID: similar.id,
-                              ),
-                            ),
-                          );
-                          if (kDebugMode) {
-                            print(similar.id);
-                          }
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10).r,
-                            border: Border.all(
-                              color: AppColorsDark.borderColor,
-                            ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(8.0),
-                            ).r,
-                            child: ImageWithShimmer(
-                              imageUrl:
-                              ApiConstance.imageURL(similar.backdropPath!),
-                              width: 120.w,
-                              height: double.infinity,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            );
-          case RequestState.error:
-            return SizedBox(
-              height: 300.h,
-              child: Center(
-                child: Text(
-                  state.moviesSimilarMessage,
-                  style: textTheme.titleLarge,
-                ),
-              ),
-            );
-        }
-      },
-    );
-  }
-
-  Widget _getCast(List<Cast>? cast) {
-    if (cast != null && cast.isNotEmpty) {
-      return SectionListView(
-        height: 140.h,
-        itemCount: cast.length,
-        itemBuilder: (context, index) => CastCard(
-          cast: cast[index],
-        ),
-      );
-    } else {
-      return const SizedBox();
-    }
-  }
-
-  Widget _getReviews(List<Review>? reviews) {
-    if (reviews != null && reviews.isNotEmpty) {
-      return SectionListView(
-        height: 150.h,
-        itemCount: reviews.length,
-        itemBuilder: (context, index) => ReviewCard(
-          review: reviews[index],
-        ),
-      );
-    } else {
-      return const SizedBox();
-    }
   }
 }
 
