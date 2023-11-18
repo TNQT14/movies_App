@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import '../../bloc/main_bloc/main_bloc.dart';
-import '../../bloc/main_bloc/main_event.dart';
 import '../../bloc/main_bloc/main_state.dart';
 import '../../contants/app_string.dart';
+import '../movies_screen/movies_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -50,27 +50,8 @@ class _MainScreenState extends State<MainScreen> {
       create: (context) => MainBloc(),
       child: BlocBuilder<MainBloc, MainState>(
         builder: (context, state) {
-          return Scaffold(
-            bottomNavigationBar: BottomNavigationBar(
-              fixedColor: Colors.white,
-              currentIndex: state.currentIndex,
-              onTap: (index) {
-                MainBloc.get(context).add(ChangeCurrentIndexEvent(index));
-              },
-              showSelectedLabels: true,
-              showUnselectedLabels: false,
-              items: [
-                bottomNavigationBarItem(
-                    icon: Icons.movie, label: "Movies".toUpperCase(), color: Colors.white),
-                bottomNavigationBarItem(
-                    icon: Icons.tv, label: "TV Shows".toUpperCase(), color: Colors.white),
-                bottomNavigationBarItem(
-                    icon: Icons.search, label: "Search".toUpperCase(), color: Colors.white),
-                bottomNavigationBarItem(
-                    icon: Icons.settings, label: "settings".toUpperCase(), color: Colors.white),
-              ],
-            ),
-            body: state.screens[state.currentIndex],
+          return const Scaffold(
+            body: MoviesScreen(),
           );
         },
       ),

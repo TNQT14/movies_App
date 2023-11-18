@@ -100,7 +100,7 @@ class SeeMoreScreenRCM extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.0).r,
                               ),
                               child: Text(
-                                'Weight: ${movie!.voteAverage.toStringAsFixed(6)}',
+                                'Weight: ${movie.voteAverage.toStringAsFixed(6)}',
                                 style: textTheme.titleSmall,
                               ),
                             ),

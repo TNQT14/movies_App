@@ -102,7 +102,7 @@ class MovieDetailContent extends StatelessWidget {
                                           backgroundColor:
                                           AppColorsDark.primaryRedColor,
                                           child: IconButton(
-                                            icon: Icon(Icons.play_circle),
+                                            icon: const Icon(Icons.play_circle),
                                             onPressed: () {  },),
                                         ),
                                         Text(
