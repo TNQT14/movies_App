@@ -5,7 +5,7 @@ import '../../utils/function.dart';
 class Review extends Equatable {
   final String authorName;
   final String authorUserName;
-  final String avatarUrl;
+  // final String avatarUrl;
   final double rating;
   final String content;
   final String elapsedTime;
@@ -13,7 +13,7 @@ class Review extends Equatable {
   const Review({
     required this.authorName,
     required this.authorUserName,
-    required this.avatarUrl,
+    // required this.avatarUrl,
     required this.rating,
     required this.content,
     required this.elapsedTime,
@@ -23,7 +23,7 @@ class Review extends Equatable {
   List<Object?> get props => [
     authorName,
     authorUserName,
-    avatarUrl,
+    // avatarUrl,
     rating,
     content,
     elapsedTime,
@@ -34,7 +34,7 @@ class ReviewModel extends Review {
   const ReviewModel({
     required super.authorName,
     required super.authorUserName,
-    required super.avatarUrl,
+    // required super.avatarUrl,
     required super.rating,
     required super.content,
     required super.elapsedTime,
@@ -44,7 +44,7 @@ class ReviewModel extends Review {
     return ReviewModel(
       authorName: json['author'],
       authorUserName: '@${json['author_details']['username']}',
-      avatarUrl: getAvatarUrl(json['author_details']['avatar_path']),
+      // avatarUrl: getAvatarUrl(json['author_details']['avatar_path']),
       rating: json['author_details']['rating'] != null
           ? json['author_details']['rating'] / 2
           : -1,

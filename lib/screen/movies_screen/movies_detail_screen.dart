@@ -28,8 +28,7 @@ class MovieDetailsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<MoviesDetailsBloc>()
         ..add(GetMoviesDetailsEvent(movieID))
-        ..add(GetMoviesRecommendationEvent(movieID))
-        ..add(GetMoviesSimilarEvent(movieID)),
+        ..add(GetMoviesRecommendationEvent(movieID)),
       child: const Scaffold(
         body: MovieDetailContent(),
       ),

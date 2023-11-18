@@ -13,11 +13,11 @@ abstract class BaseMovieRepository {
 
   Future<Either<Failure, List<Movies>>> getPopularMovies();
 
-  Future<Either<Failure, List<Movies>>> getTopRatedMovies();
+  // Future<Either<Failure, List<Movies>>> getTopRatedMovies();
 
   Future<Either<Failure, List<Movies>>> getUpcomingMovies();
 
-  Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page);
+  // Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page);
 
   // Future<Either<Failure, List<Movies>>> getAllTopRatedMovies(int page);
 
@@ -27,6 +27,6 @@ abstract class BaseMovieRepository {
   Future<Either<Failure, List<MoviesRecommendation>>> getMovieRecommendation(
       MovieRecommendationParameters parameters);
 
-  Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
-      MovieSimilarParameters parameters);
+  // Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
+  //     MovieSimilarParameters parameters);
 }

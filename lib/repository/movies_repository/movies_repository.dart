@@ -49,16 +49,16 @@ class MoviesRepository extends BaseMovieRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, List<Movies>>> getTopRatedMovies() async {
-    final result = await baseMovieRemoteDataSource.getTopRatedMovies();
-    try {
-      return Right(result);
-    } on ServerException catch (failure) {
-      return Left(
-          ServerFailure(message: failure.errorMessageModel.statusMessage));
-    }
-  }
+  // @override
+  // Future<Either<Failure, List<Movies>>> getTopRatedMovies() async {
+  //   final result = await baseMovieRemoteDataSource.getTopRatedMovies();
+  //   try {
+  //     return Right(result);
+  //   } on ServerException catch (failure) {
+  //     return Left(
+  //         ServerFailure(message: failure.errorMessageModel.statusMessage));
+  //   }
+  // }
 
   @override
   Future<Either<Failure, MovieDetails>> getMovieDetails(
@@ -85,17 +85,17 @@ class MoviesRepository extends BaseMovieRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
-      MovieSimilarParameters parameters) async {
-    final result = await baseMovieRemoteDataSource.getMovieSimilar(parameters);
-    try {
-      return Right(result);
-    } on ServerException catch (failure) {
-      return Left(
-          ServerFailure(message: failure.errorMessageModel.statusMessage));
-    }
-  }
+  // @override
+  // Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
+  //     MovieSimilarParameters parameters) async {
+  //   final result = await baseMovieRemoteDataSource.getMovieSimilar(parameters);
+  //   try {
+  //     return Right(result);
+  //   } on ServerException catch (failure) {
+  //     return Left(
+  //         ServerFailure(message: failure.errorMessageModel.statusMessage));
+  //   }
+  // }
 
   Future<Either<Failure, List<List<Movies>>>> getMovies() async {
     try {
@@ -107,16 +107,16 @@ class MoviesRepository extends BaseMovieRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page) async {
-    try {
-      final result = await baseMovieRemoteDataSource.getAllPopularMovies(page);
-      return Right(result);
-    } on ServerException catch (failure) {
-      return Left(
-          ServerFailure(message: failure.errorMessageModel.statusMessage));
-    }
-  }
+  // @override
+  // Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page) async {
+  //   try {
+  //     final result = await baseMovieRemoteDataSource.getAllPopularMovies(page);
+  //     return Right(result);
+  //   } on ServerException catch (failure) {
+  //     return Left(
+  //         ServerFailure(message: failure.errorMessageModel.statusMessage));
+  //   }
+  // }
 
   // @override
   // Future<Either<Failure, List<Movies>>> getAllTopRatedMovies(int page) async {

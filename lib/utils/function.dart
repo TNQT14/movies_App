@@ -60,13 +60,13 @@ String getDate(String? date) {
 }
 
 
-String getProfileImageUrl(Map<String, dynamic> json) {
-  if (json['profile_path'] != null) {
-    return ApiConstance.baseProfileUrl + json['profile_path'];
-  } else {
-    return ApiConstance.castPlaceHolder;
-  }
-}
+  // String getProfileImageUrl(Map<String, dynamic> json) {
+  //   if (json['profile_path'] != null) {
+  //     return ApiConstance.baseProfileUrl + json['profile_path'];
+  //   } else {
+  //     return ApiConstance.castPlaceHolder;
+  //   }
+  // }
 
 String getTrailerUrl(Map<String, dynamic> json) {
   List videos = json['videos']['results'];
@@ -82,17 +82,17 @@ String getTrailerUrl(Map<String, dynamic> json) {
   }
 }
 
-String getAvatarUrl(String? path) {
-  if (path != null) {
-    if (path.startsWith('/https://www.gravatar.com/avatar')) {
-      return path.substring(1);
-    } else {
-      return ApiConstance.baseAvatarUrl + path;
-    }
-  } else {
-    return ApiConstance.avatarPlaceHolder;
-  }
-}
+// String getAvatarUrl(String? path) {
+//   if (path != null) {
+//     if (path.startsWith('/https://www.gravatar.com/avatar')) {
+//       return path.substring(1);
+//     } else {
+//       return ApiConstance.baseAvatarUrl + path;
+//     }
+//   } else {
+//     return ApiConstance.avatarPlaceHolder;
+//   }
+// }
 
 String getElapsedTime(String date) {
   DateTime reviewDate = DateTime.parse(date);
