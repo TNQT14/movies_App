@@ -6,7 +6,6 @@ import 'package:movies_app/screen/main_screen/main_screen.dart';
 import 'package:movies_app/theme/theme_data/theme_data.dart';
 import 'package:movies_app/utils/enum.dart';
 import 'package:wakelock/wakelock.dart';
-
 import 'contants/app_string.dart';
 
 void main() async {

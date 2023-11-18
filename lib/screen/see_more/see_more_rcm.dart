@@ -47,16 +47,33 @@ class SeeMoreScreenRCM extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 10).r,
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return MovieDetailsScreen(
-                        movieID: movie.id,
-                      );
-                    },
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) {
+                //       return MovieDetailsScreen(
+                //         movieID: movie.id,
+                //       );
+                //     },
+                //   ),
+                // );
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return Scaffold(
+                    appBar: AppBar(
+                      backgroundColor: AppColorsDark.greyDarkColor,
+                      elevation: 0,
+                      title: Text(
+                        "Movies Details".toUpperCase(),
+                        style: textTheme.labelLarge,
+                      ),
+                      centerTitle: true,
+                    ),
+                    body: Center(
+                      child: Text("Tới đây thôi thầy",
+                          style: textTheme.labelMedium),
+                    ),
+                  );
+                }));
               },
               child: Row(
                 children: [

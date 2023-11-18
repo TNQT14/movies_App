@@ -19,4 +19,5 @@ class AppString {
   static const String help = "Help";
   static const String internetError = "Please check your internet connectivity";
   static const String connectionFaild = "No Connection";
+  static const String allMovive = "All Movie";
 }

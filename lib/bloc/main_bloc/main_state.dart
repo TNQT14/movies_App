@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-
 import '../../screen/movies_screen/movies_screen.dart';
 
 class MainState extends Equatable {
@@ -10,7 +9,7 @@ class MainState extends Equatable {
   final List<Widget> screens = [
     const MoviesScreen(),
     Container(),
-    // const SearchScreen(),
+    Container(),
     Container(),
   ];
 

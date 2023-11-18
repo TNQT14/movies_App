@@ -42,7 +42,7 @@ class UpcomingWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        AppString.upcoming,
+                        AppString.allMovive,
                         style: textTheme.labelLarge,
                       ),
                       InkWell(
@@ -53,7 +53,7 @@ class UpcomingWidget extends StatelessWidget {
                               builder: (BuildContext context) {
                                 return SeeMoreScreen(
                                   movieList: state.upcomingMovies,
-                                  title: AppString.upcoming,
+                                  title: AppString.allMovive,
                                 );
                               },
                             ),

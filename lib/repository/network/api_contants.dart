@@ -1,17 +1,17 @@
 class ApiConstance {
-  static const String baseProfileUrl = 'https://image.tmdb.org/t/p/w300';
-  static const String baseStillUrl = 'https://image.tmdb.org/t/p/w500';
-  static const String baseAvatarUrl = 'https://image.tmdb.org/t/p/w185';
+  static const String baseProfileUrl = '';
+  static const String baseStillUrl = '';
+  static const String baseAvatarUrl = '';
   static const String baseVideoUrl = 'https://www.youtube.com/watch?v=';
   static const String baseImageURL = "";
 
-  static const String host = "http://172.17.17.203:9000";
+  static const String host = "http://10.0.29.152:9000";
 
   static const String castPlaceHolder =
-      'https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png';
+      '';
 
   static const String avatarPlaceHolder =
-      'https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049__480.png';
+      '';
 
   /// API Constance For Movies
   static const String nowPlayingMoviesPath =

@@ -28,7 +28,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
     on<GetNowPlayingMoviesEvent>(_getNowPlayingMovies);
     on<GetUpcomingMoviesEvent>(_getUpcomingMovies);
     // on<GetPopularMoviesEvent>(_getPopularMovies);
-    on<GetPopularMoviesEvent>(_getAllPopularMovies);
+    // on<GetPopularMoviesEvent>(_getAllPopularMovies);
     on<GetTopRatedMoviesEvent>(_getAllTopRatedMovies);
     on<FetchMorePopularMoviesEvent>(_fetchMoreMovies);
     on<FetchMoreTopRatedMoviesEvent>(_fetchMoreTopRatedMovies);
@@ -69,21 +69,21 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
 
   int page = 1;
 
-  Future<void> _getAllPopularMovies(
-      GetPopularMoviesEvent event, Emitter<MoviesStates> emit) async {
-    if (state.popularState == GetAllRequestStatus.loading) {
-      await _getMoviesPopular(emit);
-    } else if (state.popularMovies == GetAllRequestStatus.loaded) {
-      await _getMoviesPopular(emit);
-    } else {
-      emit(
-        state.copyWith(
-          popularState: GetAllRequestStatus.loading,
-        ),
-      );
-      await _getMoviesPopular(emit);
-    }
-  }
+  // Future<void> _getAllPopularMovies(
+  //     GetPopularMoviesEvent event, Emitter<MoviesStates> emit) async {
+  //   if (state.popularState == GetAllRequestStatus.loading) {
+  //     await _getMoviesPopular(emit);
+  //   } else if (state.popularMovies == GetAllRequestStatus.loaded) {
+  //     await _getMoviesPopular(emit);
+  //   } else {
+  //     emit(
+  //       state.copyWith(
+  //         popularState: GetAllRequestStatus.loading,
+  //       ),
+  //     );
+  //     await _getMoviesPopular(emit);
+  //   }
+  // }
 
   Future<void> _getMoviesPopular(Emitter<MoviesStates> emit) async {
     final result = await allPopularMoviesUseCase(page);
