@@ -15,7 +15,6 @@ class MoviesScreen extends StatelessWidget {
       create: (context) {
         return sl<MoviesBloc>()
           ..add(GetNowPlayingMoviesEvent())
-          // ..add(GetPopularMoviesEvent())
           ..add(GetUpcomingMoviesEvent())
         ;
       },

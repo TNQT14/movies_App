@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../component/image_with_simmer.dart';
 import '../../component/space.dart';
-import '../../model/movies_model/movies.dart';
 import '../../model/movies_model/movies_recomment.dart';
 import '../../repository/network/api_contants.dart';
 import '../../theme/app_color/app_color_dark.dart';
 import '../../theme/theme_data/theme_data.dart';
 import '../../utils/enum.dart';
-import '../movies_screen/movies_detail_screen.dart';
 
 class SeeMoreScreenRCM extends StatelessWidget {
   const SeeMoreScreenRCM({Key? key, required this.movieList, required this.title})
@@ -47,16 +45,6 @@ class SeeMoreScreenRCM extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 10).r,
             child: InkWell(
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return MovieDetailsScreen(
-                //         movieID: movie.id,
-                //       );
-                //     },
-                //   ),
-                // );
                 Navigator.push(context, MaterialPageRoute(builder: (context){
                   return Scaffold(
                     appBar: AppBar(
@@ -117,20 +105,6 @@ class SeeMoreScreenRCM extends StatelessWidget {
                               ),
                             ),
                             Space(height: 0, width: 16.w),
-                            // Row(
-                            //   children: [
-                            //     Icon(
-                            //       Icons.star,
-                            //       color: AppColorsDark.iconRateColor,
-                            //       size: 20.sp,
-                            //     ),
-                            //     Space(height: 0, width: 4.w),
-                            //     Text(
-                            //       (movie.voteAverage).toStringAsFixed(1),
-                            //       style: textTheme.titleMedium,
-                            //     ),
-                            //   ],
-                            // ),
                           ],
                         ),
                         Space(height: 10.h, width: 0),

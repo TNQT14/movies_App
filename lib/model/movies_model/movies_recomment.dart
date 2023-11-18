@@ -29,9 +29,7 @@ class MoviesRecommendation extends Equatable {
     title,
     backdropPath,
     overview,
-    // genreIds,
     posterPath,
-    // adult,
     releaseDate,
   ];
 }
@@ -42,11 +40,9 @@ class MoviesRecommendationModel extends MoviesRecommendation {
         required super.id,
         required super.title,
         required super.voteAverage,
-        // required super.genreIds,
         super.backdropPath,
         required super.releaseDate,
         super.posterPath,
-        // required super.adult
       });
 
   factory MoviesRecommendationModel.fromJson(Map<String, dynamic> json) {
@@ -55,13 +51,9 @@ class MoviesRecommendationModel extends MoviesRecommendation {
       id: json["show_id"],
       title: json["title"],
       voteAverage: json["weight"]?.toDouble() ?? 0.0,
-      // genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
       backdropPath: json["backdrop_path"] ?? '',
       releaseDate: json["date_added"],
       posterPath: json["poster_path"] ?? '',
-      // adult: json['adult'],
-
-
     );
   }
 }
