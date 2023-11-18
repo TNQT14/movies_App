@@ -13,7 +13,7 @@ import '../network/api_contants.dart';
 abstract class BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getAllPopularMovies(int page);
 
-  Future<List<MovieModel>> getAllTopRatedMovies(int page);
+  // Future<List<MovieModel>> getAllTopRatedMovies(int page);
 
   Future<List<List<MovieModel>>> getMovies();
 
@@ -174,18 +174,18 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     }
   }
 
-  @override
-  Future<List<MovieModel>> getAllTopRatedMovies(int page) async {
-    final response =
-    await Dio().get(ApiConstance.getAllTopRatedMoviesPath(page));
-    if (response.statusCode == 200) {
-      print('Call API getAllTopRatedMovies');
-      return List<MovieModel>.from((response.data['results'] as List)
-          .map((e) => MovieModel.fromJson(e)));
-    } else {
-      throw ServerException(
-        errorMessageModel: ErrorMessageModel.fromJson(response.data),
-      );
-    }
-  }
+//   @override
+//   Future<List<MovieModel>> getAllTopRatedMovies(int page) async {
+//     final response =
+//     await Dio().get(ApiConstance.getAllTopRatedMoviesPath(page));
+//     if (response.statusCode == 200) {
+//       print('Call API getAllTopRatedMovies');
+//       return List<MovieModel>.from((response.data['results'] as List)
+//           .map((e) => MovieModel.fromJson(e)));
+//     } else {
+//       throw ServerException(
+//         errorMessageModel: ErrorMessageModel.fromJson(response.data),
+//       );
+//     }
+//   }
 }

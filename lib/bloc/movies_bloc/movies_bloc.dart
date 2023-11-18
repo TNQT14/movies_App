@@ -15,23 +15,23 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
   final GetNowPlayingMoviesUseCase getNowPlayingMoviesUseCase;
   final GetUpcomingMoviesUseCase getUpcomingMoviesUseCase;
   final GetAllPopularMoviesUseCase allPopularMoviesUseCase;
-  final GetAllTopRatedMoviesUseCase allTopRatedMoviesUseCase;
+  // final GetAllTopRatedMoviesUseCase allTopRatedMoviesUseCase;
 
   // final GetPopularMoviesUseCase getPopularMoviesUseCase;
   MoviesBloc(
       this.getNowPlayingMoviesUseCase,
       this.getUpcomingMoviesUseCase,
       // this.getPopularMoviesUseCase,
-      this.allTopRatedMoviesUseCase,
+      // this.allTopRatedMoviesUseCase,
       this.allPopularMoviesUseCase)
       : super(const MoviesStates()) {
     on<GetNowPlayingMoviesEvent>(_getNowPlayingMovies);
     on<GetUpcomingMoviesEvent>(_getUpcomingMovies);
     // on<GetPopularMoviesEvent>(_getPopularMovies);
     // on<GetPopularMoviesEvent>(_getAllPopularMovies);
-    on<GetTopRatedMoviesEvent>(_getAllTopRatedMovies);
+    // on<GetTopRatedMoviesEvent>(_getAllTopRatedMovies);
     on<FetchMorePopularMoviesEvent>(_fetchMoreMovies);
-    on<FetchMoreTopRatedMoviesEvent>(_fetchMoreTopRatedMovies);
+    // on<FetchMoreTopRatedMoviesEvent>(_fetchMoreTopRatedMovies);
   }
 
   FutureOr<void> _getNowPlayingMovies(
@@ -137,60 +137,60 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
   //           topRatedStates: GetAllRequestStatus.loaded, topRatedMovies: r)));
   // }
 
-  Future<void> _getAllTopRatedMovies(
-      GetTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
-    if (state.topRatedStates == GetAllRequestStatus.loading) {
-      await _getTopRatedMovies(emit);
-    } else if (state.topRatedMovies == GetAllRequestStatus.loaded) {
-      await _getTopRatedMovies(emit);
-    } else {
-      emit(
-        state.copyWith(
-          topRatedStates: GetAllRequestStatus.loading,
-        ),
-      );
-      await _getTopRatedMovies(emit);
-    }
-  }
+  // Future<void> _getAllTopRatedMovies(
+  //     GetTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
+  //   if (state.topRatedStates == GetAllRequestStatus.loading) {
+  //     await _getTopRatedMovies(emit);
+  //   } else if (state.topRatedMovies == GetAllRequestStatus.loaded) {
+  //     await _getTopRatedMovies(emit);
+  //   } else {
+  //     emit(
+  //       state.copyWith(
+  //         topRatedStates: GetAllRequestStatus.loading,
+  //       ),
+  //     );
+  //     await _getTopRatedMovies(emit);
+  //   }
+  // }
 
-  Future<void> _getTopRatedMovies(Emitter<MoviesStates> emit) async {
-    final result = await allTopRatedMoviesUseCase(page);
-    result.fold(
-          (l) => emit(
-        state.copyWith(
-          topRatedStates: GetAllRequestStatus.error,
-        ),
-      ),
-          (r) {
-        page++;
-        emit(
-          state.copyWith(
-            topRatedStates: GetAllRequestStatus.loaded,
-            topRatedMovies: state.topRatedMovies + r,
-          ),
-        );
-      },
-    );
-  }
-
-  Future<void> _fetchMoreTopRatedMovies(
-      FetchMoreTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
-    final result = await allTopRatedMoviesUseCase(page);
-    result.fold(
-          (l) => emit(
-        state.copyWith(
-          topRatedStates: GetAllRequestStatus.fetchMoreError,
-        ),
-      ),
-          (r) {
-        page++;
-        return emit(
-          state.copyWith(
-            topRatedStates: GetAllRequestStatus.fetchMoreError,
-            topRatedMovies: state.topRatedMovies + r,
-          ),
-        );
-      },
-    );
-  }
+  // Future<void> _getTopRatedMovies(Emitter<MoviesStates> emit) async {
+  //   final result = await allTopRatedMoviesUseCase(page);
+  //   result.fold(
+  //         (l) => emit(
+  //       state.copyWith(
+  //         topRatedStates: GetAllRequestStatus.error,
+  //       ),
+  //     ),
+  //         (r) {
+  //       page++;
+  //       emit(
+  //         state.copyWith(
+  //           topRatedStates: GetAllRequestStatus.loaded,
+  //           topRatedMovies: state.topRatedMovies + r,
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
+  //
+  // Future<void> _fetchMoreTopRatedMovies(
+  //     FetchMoreTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
+  //   final result = await allTopRatedMoviesUseCase(page);
+  //   result.fold(
+  //         (l) => emit(
+  //       state.copyWith(
+  //         topRatedStates: GetAllRequestStatus.fetchMoreError,
+  //       ),
+  //     ),
+  //         (r) {
+  //       page++;
+  //       return emit(
+  //         state.copyWith(
+  //           topRatedStates: GetAllRequestStatus.fetchMoreError,
+  //           topRatedMovies: state.topRatedMovies + r,
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 }

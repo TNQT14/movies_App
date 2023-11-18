@@ -19,7 +19,7 @@ abstract class BaseMovieRepository {
 
   Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page);
 
-  Future<Either<Failure, List<Movies>>> getAllTopRatedMovies(int page);
+  // Future<Either<Failure, List<Movies>>> getAllTopRatedMovies(int page);
 
   Future<Either<Failure, MovieDetails>> getMovieDetails(
       MovieDetailsParameters parameters);

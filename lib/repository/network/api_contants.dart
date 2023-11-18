@@ -39,9 +39,9 @@ class ApiConstance {
     return '';
   }
 
-  static String getAllTopRatedMoviesPath(int page) {
-    return '';
-  }
+  // static String getAllTopRatedMoviesPath(int page) {
+  //   return '';
+  // }
 
   /// API Constance For Base Image URL
   static String imageURL(String imagePath) => '$imagePath';
