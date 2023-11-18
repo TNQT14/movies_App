@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/component/review_content.dart';
-
 import '../model/movies_model/review.dart';
 import '../theme/app_color/app_color_dark.dart';
 import '../theme/theme_data/theme_data.dart';
 import '../utils/enum.dart';
 import '../utils/function.dart';
-import 'avatar.dart';
 
 class ReviewCard extends StatelessWidget {
   final Review review;
@@ -38,10 +36,6 @@ class ReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Padding(
-                //   padding: const EdgeInsets.only(right: 6).r,
-                //   child: Avatar(avatarUrl: review.avatarUrl),
-                // ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

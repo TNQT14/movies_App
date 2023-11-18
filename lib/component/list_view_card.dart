@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../model/movies_model/movies.dart';
 import '../repository/network/api_contants.dart';
 import '../screen/movies_screen/movies_detail_screen.dart';

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
 import '../model/movies_model/review.dart';
-import 'avatar.dart';
 
 class ReviewContent extends StatelessWidget {
   const ReviewContent({
@@ -24,10 +21,6 @@ class ReviewContent extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Padding(
-                //   padding: const EdgeInsets.only(right: 6).r,
-                //   child: Avatar(avatarUrl: review.avatarUrl),
-                // ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

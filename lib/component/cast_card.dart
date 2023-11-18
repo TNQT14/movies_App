@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/component/space.dart';
-
 import '../model/movies_model/cast.dart';
 import 'image_with_simmer.dart';
 
 class CastCard extends StatelessWidget {
   final Cast cast;
-
   const CastCard({
     required this.cast,
     super.key,

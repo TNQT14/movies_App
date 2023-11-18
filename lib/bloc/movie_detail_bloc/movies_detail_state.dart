@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import '../../model/movies_model/movie_detail.dart';
 import '../../model/movies_model/movies_recomment.dart';
 import '../../model/movies_model/movies_similar.dart';
