@@ -24,7 +24,7 @@ class SeeMoreScreen extends StatelessWidget {
         backgroundColor: AppColorsDark.greyDarkColor,
         elevation: 0,
         title: Text(
-          "$title".toUpperCase(),
+          title.toUpperCase(),
           style: textTheme.labelLarge,
         ),
         centerTitle: true,

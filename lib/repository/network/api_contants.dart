@@ -18,6 +18,6 @@ class ApiConstance {
   static String movieRecommendationPath(int movieID) =>
       "$host/api/$movieID/recommendations";
 
-  static String imageURL(String imagePath) => '$imagePath';
+  static String imageURL(String imagePath) => imagePath;
 
 }
