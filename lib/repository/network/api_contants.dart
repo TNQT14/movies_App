@@ -1,19 +1,8 @@
 class ApiConstance {
-  static const String baseProfileUrl = '';
-  static const String baseStillUrl = '';
-  static const String baseAvatarUrl = '';
   static const String baseVideoUrl = 'https://www.youtube.com/watch?v=';
-  static const String baseImageURL = "";
 
   static const String host = "http://10.0.29.152:9000";
 
-  static const String castPlaceHolder =
-      '';
-
-  // static const String avatarPlaceHolder =
-  //     '';
-
-  /// API Constance For Movies
   static const String nowPlayingMoviesPath =
       "$host/api/netflix?page=1";
 
