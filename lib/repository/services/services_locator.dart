@@ -57,7 +57,7 @@ class ServiceLocator {
     sl.registerFactory(() => MoviesBloc(
       sl(),
       sl(),
-      sl(),
+      // sl(),
       // sl(),
     ));
     sl.registerFactory(() => MoviesDetailsBloc(sl(), sl(), sl()));
@@ -71,8 +71,8 @@ class ServiceLocator {
 
     sl.registerLazySingleton(
             () => GetPopularMoviesUseCase(baseMovieRepository: sl()));
-    sl.registerLazySingleton(
-            () => GetAllPopularMoviesUseCase(baseMovieRepository: sl()));
+    // sl.registerLazySingleton(
+    //         () => GetAllPopularMoviesUseCase(baseMovieRepository: sl()));
     sl.registerLazySingleton(
             () => GetMovieDetailsUseCase(baseMovieRepository: sl()));
 

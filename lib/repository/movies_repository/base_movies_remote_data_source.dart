@@ -11,7 +11,7 @@ import '../../usecase/movies/get_movie_recommendation_usecase.dart';
 import '../../usecase/movies/get_movies_similar_usecase.dart';
 import '../network/api_contants.dart';
 abstract class BaseMovieRemoteDataSource {
-  Future<List<MovieModel>> getAllPopularMovies(int page);
+  // Future<List<MovieModel>> getAllPopularMovies(int page);
 
   // Future<List<MovieModel>> getAllTopRatedMovies(int page);
 
@@ -159,20 +159,20 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     return response;
   }
 
-  @override
-  Future<List<MovieModel>> getAllPopularMovies(int page) async {
-    print('Call API getAllPopularMovies');
-    final response =
-    await Dio().get(ApiConstance.getAllPopularMoviesPath(page));
-    if (response.statusCode == 200) {
-      return List<MovieModel>.from((response.data['results'] as List)
-          .map((e) => MovieModel.fromJson(e)));
-    } else {
-      throw ServerException(
-        errorMessageModel: ErrorMessageModel.fromJson(response.data),
-      );
-    }
-  }
+  // @override
+  // Future<List<MovieModel>> getAllPopularMovies(int page) async {
+  //   print('Call API getAllPopularMovies');
+  //   final response =
+  //   await Dio().get(ApiConstance.getAllPopularMoviesPath(page));
+  //   if (response.statusCode == 200) {
+  //     return List<MovieModel>.from((response.data['results'] as List)
+  //         .map((e) => MovieModel.fromJson(e)));
+  //   } else {
+  //     throw ServerException(
+  //       errorMessageModel: ErrorMessageModel.fromJson(response.data),
+  //     );
+  //   }
+  // }
 
 //   @override
 //   Future<List<MovieModel>> getAllTopRatedMovies(int page) async {

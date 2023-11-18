@@ -35,11 +35,7 @@ class ApiConstance {
   static String movieSimilarPath(int movieID) =>
       "";
 
-  static String getAllPopularMoviesPath(int page) {
-    return '';
-  }
-
-  // static String getAllTopRatedMoviesPath(int page) {
+  // static String getAllPopularMoviesPath(int page) {
   //   return '';
   // }
 

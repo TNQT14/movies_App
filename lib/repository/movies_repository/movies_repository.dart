@@ -107,16 +107,16 @@ class MoviesRepository extends BaseMovieRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page) async {
-    try {
-      final result = await baseMovieRemoteDataSource.getAllPopularMovies(page);
-      return Right(result);
-    } on ServerException catch (failure) {
-      return Left(
-          ServerFailure(message: failure.errorMessageModel.statusMessage));
-    }
-  }
+  // @override
+  // Future<Either<Failure, List<Movies>>> getAllPopularMovies(int page) async {
+  //   try {
+  //     final result = await baseMovieRemoteDataSource.getAllPopularMovies(page);
+  //     return Right(result);
+  //   } on ServerException catch (failure) {
+  //     return Left(
+  //         ServerFailure(message: failure.errorMessageModel.statusMessage));
+  //   }
+  // }
 
   // @override
   // Future<Either<Failure, List<Movies>>> getAllTopRatedMovies(int page) async {
