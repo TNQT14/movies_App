@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../bloc/movies_bloc/movies_bloc.dart';
 import '../../bloc/movies_bloc/movies_state.dart';
 import '../../component/image_with_simmer.dart';

@@ -7,19 +7,15 @@ class MoviesStates extends Equatable {
   final List<Movies> nowPlayingMovies;
   final RequestState nowPlayingState;
   final String nowPlayingMessage;
-
   final List<Movies> upcomingMovies;
   final RequestState upcomingState;
   final String upcomingMessage;
-
   final List<Movies> popularMovies;
   final GetAllRequestStatus popularState;
   final String popularMessage;
-
   final List<Movies> topRatedMovies;
   final GetAllRequestStatus topRatedStates;
   final String topRatedMessage;
-
   final List<MovieDetails> moviesDetails;
   final RequestState moviesDetailsStates;
   final String moviesDetailsMessage;

@@ -8,7 +8,6 @@ class Avatar extends StatelessWidget {
     super.key,
     required this.avatarUrl,
   });
-
   final String avatarUrl;
 
   @override
