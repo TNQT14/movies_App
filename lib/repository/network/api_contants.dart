@@ -23,9 +23,6 @@ class ApiConstance {
   static const String popularMoviesPath =
       "$host/api/netflix?page=1";
 
-  static const String topRatedMoviesPath =
-      "";
-
   static String movieDetailsPath(int movieID) =>
       "$host/api/netflix/$movieID";
 
@@ -35,9 +32,8 @@ class ApiConstance {
   static String movieSimilarPath(int movieID) =>
       "";
 
-  // static String getAllPopularMoviesPath(int page) {
-  //   return '';
-  // }
+  // static const String topRatedMoviesPath =
+  //     "";
 
   /// API Constance For Base Image URL
   static String imageURL(String imagePath) => '$imagePath';

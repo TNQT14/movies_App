@@ -80,8 +80,8 @@ class ServiceLocator {
             () => GetMovieRecommendationUseCase(baseMovieRepository: sl()));
     sl.registerLazySingleton(
             () => GetMovieSimilarUseCase(baseMovieRepository: sl()));
-    sl.registerLazySingleton(
-            () => GetTopRatedMoviesUseCase(baseMovieRepository: sl()));
+    // sl.registerLazySingleton(
+    //         () => GetTopRatedMoviesUseCase(baseMovieRepository: sl()));
     // sl.registerLazySingleton(
     //         () => GetAllTopRatedMoviesUseCase(baseMovieRepository: sl()));
 

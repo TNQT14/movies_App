@@ -1,10 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../usecase/base_use_case.dart';
-import '../../usecase/movies/get_all_popular_movies_use_case.dart';
-import '../../usecase/movies/get_all_top_rated_movies_use_case.dart';
 import '../../usecase/movies/get_now_playing_movies_usecases.dart';
 import '../../usecase/movies/get_upcoming_movies_use_case.dart';
 import '../../utils/enum.dart';
@@ -14,25 +10,13 @@ import 'movies_state.dart';
 class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
   final GetNowPlayingMoviesUseCase getNowPlayingMoviesUseCase;
   final GetUpcomingMoviesUseCase getUpcomingMoviesUseCase;
-  // final GetAllPopularMoviesUseCase allPopularMoviesUseCase;
-  // final GetAllTopRatedMoviesUseCase allTopRatedMoviesUseCase;
-
-  // final GetPopularMoviesUseCase getPopularMoviesUseCase;
   MoviesBloc(
       this.getNowPlayingMoviesUseCase,
       this.getUpcomingMoviesUseCase,
-      // this.getPopularMoviesUseCase,
-      // this.allTopRatedMoviesUseCase,
-      // this.allPopularMoviesUseCase
       )
       : super(const MoviesStates()) {
     on<GetNowPlayingMoviesEvent>(_getNowPlayingMovies);
     on<GetUpcomingMoviesEvent>(_getUpcomingMovies);
-    // on<GetPopularMoviesEvent>(_getPopularMovies);
-    // on<GetPopularMoviesEvent>(_getAllPopularMovies);
-    // on<GetTopRatedMoviesEvent>(_getAllTopRatedMovies);
-    // on<FetchMorePopularMoviesEvent>(_fetchMoreMovies);
-    // on<FetchMoreTopRatedMoviesEvent>(_fetchMoreTopRatedMovies);
   }
 
   FutureOr<void> _getNowPlayingMovies(
@@ -57,141 +41,6 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesStates> {
             upcomingState: RequestState.loaded, upcomingMovies: r)));
   }
 
-  // FutureOr<void> _getPopularMovies(
-  //     GetPopularMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   final result = await getPopularMoviesUseCase(const NoParameters());
-  //   result.fold(
-  //       (l) => emit(state.copyWith(
-  //           popularState: GetAllRequestStatus.error,
-  //           popularMessage: l.message)),
-  //       (r) => emit(state.copyWith(
-  //           popularState: GetAllRequestStatus.loaded, popularMovies: r)));
-  // }
-
   int page = 1;
 
-  // Future<void> _getAllPopularMovies(
-  //     GetPopularMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   if (state.popularState == GetAllRequestStatus.loading) {
-  //     await _getMoviesPopular(emit);
-  //   } else if (state.popularMovies == GetAllRequestStatus.loaded) {
-  //     await _getMoviesPopular(emit);
-  //   } else {
-  //     emit(
-  //       state.copyWith(
-  //         popularState: GetAllRequestStatus.loading,
-  //       ),
-  //     );
-  //     await _getMoviesPopular(emit);
-  //   }
-  // }
-
-  // Future<void> _getMoviesPopular(Emitter<MoviesStates> emit) async {
-  //   final result = await allPopularMoviesUseCase(page);
-  //   result.fold(
-  //         (l) => emit(
-  //       state.copyWith(
-  //         popularState: GetAllRequestStatus.error,
-  //       ),
-  //     ),
-  //         (r) {
-  //       page++;
-  //       emit(
-  //         state.copyWith(
-  //           popularState: GetAllRequestStatus.loaded,
-  //           popularMovies: state.popularMovies + r,
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-
-  // Future<void> _fetchMoreMovies(
-  //     FetchMorePopularMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   final result = await allPopularMoviesUseCase(page);
-  //   result.fold(
-  //         (l) => emit(
-  //       state.copyWith(
-  //         popularState: GetAllRequestStatus.fetchMoreError,
-  //       ),
-  //     ),
-  //         (r) {
-  //       page++;
-  //       return emit(
-  //         state.copyWith(
-  //           popularState: GetAllRequestStatus.fetchMoreError,
-  //           popularMovies: state.popularMovies + r,
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-
-  // FutureOr<void> _getTopRatedMovies(
-  //     GetTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   final result = await getTopRatedMoviesUseCase(const NoParameters());
-  //   result.fold(
-  //       (l) => emit(state.copyWith(
-  //           topRatedStates: GetAllRequestStatus.error,
-  //           topRatedMessage: l.message)),
-  //       (r) => emit(state.copyWith(
-  //           topRatedStates: GetAllRequestStatus.loaded, topRatedMovies: r)));
-  // }
-
-  // Future<void> _getAllTopRatedMovies(
-  //     GetTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   if (state.topRatedStates == GetAllRequestStatus.loading) {
-  //     await _getTopRatedMovies(emit);
-  //   } else if (state.topRatedMovies == GetAllRequestStatus.loaded) {
-  //     await _getTopRatedMovies(emit);
-  //   } else {
-  //     emit(
-  //       state.copyWith(
-  //         topRatedStates: GetAllRequestStatus.loading,
-  //       ),
-  //     );
-  //     await _getTopRatedMovies(emit);
-  //   }
-  // }
-
-  // Future<void> _getTopRatedMovies(Emitter<MoviesStates> emit) async {
-  //   final result = await allTopRatedMoviesUseCase(page);
-  //   result.fold(
-  //         (l) => emit(
-  //       state.copyWith(
-  //         topRatedStates: GetAllRequestStatus.error,
-  //       ),
-  //     ),
-  //         (r) {
-  //       page++;
-  //       emit(
-  //         state.copyWith(
-  //           topRatedStates: GetAllRequestStatus.loaded,
-  //           topRatedMovies: state.topRatedMovies + r,
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-  //
-  // Future<void> _fetchMoreTopRatedMovies(
-  //     FetchMoreTopRatedMoviesEvent event, Emitter<MoviesStates> emit) async {
-  //   final result = await allTopRatedMoviesUseCase(page);
-  //   result.fold(
-  //         (l) => emit(
-  //       state.copyWith(
-  //         topRatedStates: GetAllRequestStatus.fetchMoreError,
-  //       ),
-  //     ),
-  //         (r) {
-  //       page++;
-  //       return emit(
-  //         state.copyWith(
-  //           topRatedStates: GetAllRequestStatus.fetchMoreError,
-  //           topRatedMovies: state.topRatedMovies + r,
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
 }

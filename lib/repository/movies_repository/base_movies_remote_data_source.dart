@@ -23,7 +23,7 @@ abstract class BaseMovieRemoteDataSource {
 
   Future<List<MovieModel>> getPopularMovies();
 
-  Future<List<MovieModel>> getTopRatedMovies();
+  // Future<List<MovieModel>> getTopRatedMovies();
 
   Future<MovieDetailsModel> getMovieDetails(MovieDetailsParameters parameters);
 
@@ -80,20 +80,20 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     }
   }
 
-  @override
-  Future<List<MovieModel>> getTopRatedMovies() async {
-    final response = await Dio().get(ApiConstance.topRatedMoviesPath);
-    if (response.statusCode == 200) {
-      print('Call API getTopRatedMovies');
-      return List<MovieModel>.from((response.data["results"] as List).map(
-            (e) => MovieModel.fromJson(e),
-      ));
-    } else {
-      throw ServerException(
-        errorMessageModel: ErrorMessageModel.fromJson(response.data),
-      );
-    }
-  }
+  // @override
+  // Future<List<MovieModel>> getTopRatedMovies() async {
+  //   final response = await Dio().get(ApiConstance.topRatedMoviesPath);
+  //   if (response.statusCode == 200) {
+  //     print('Call API getTopRatedMovies');
+  //     return List<MovieModel>.from((response.data["results"] as List).map(
+  //           (e) => MovieModel.fromJson(e),
+  //     ));
+  //   } else {
+  //     throw ServerException(
+  //       errorMessageModel: ErrorMessageModel.fromJson(response.data),
+  //     );
+  //   }
+  // }
 
   @override
   Future<MovieDetailsModel> getMovieDetails(
@@ -152,7 +152,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
       [
         getNowPlayingMovies(),
         getPopularMovies(),
-        getTopRatedMovies(),
+        // getTopRatedMovies(),
       ],
       eagerError: true,
     );
