@@ -27,6 +27,6 @@ abstract class BaseMovieRepository {
   Future<Either<Failure, List<MoviesRecommendation>>> getMovieRecommendation(
       MovieRecommendationParameters parameters);
 
-  Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
-      MovieSimilarParameters parameters);
+  // Future<Either<Failure, List<MoviesSimilar>>> getMovieSimilar(
+  //     MovieSimilarParameters parameters);
 }

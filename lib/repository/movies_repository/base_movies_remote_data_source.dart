@@ -29,9 +29,9 @@ abstract class BaseMovieRemoteDataSource {
 
   Future<List<MoviesRecommendationModel>> getMovieRecommendation(
       MovieRecommendationParameters parameters);
-
-  Future<List<MoviesSimilarModel>> getMovieSimilar(
-      MovieSimilarParameters parameters);
+  //
+  // Future<List<MoviesSimilarModel>> getMovieSimilar(
+  //     MovieSimilarParameters parameters);
 }
 
 class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
@@ -128,23 +128,23 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     }
   }
 
-  @override
-  Future<List<MoviesSimilarModel>> getMovieSimilar(
-      MovieSimilarParameters parameters) async {
-    final response =
-    await Dio().get(ApiConstance.movieSimilarPath(parameters.movieID));
-    if (response.statusCode == 200) {
-      print('Call API getMovieSimilar');
-      return List<MoviesSimilarModel>.from(
-          (response.data["results"] as List).map(
-                (e) => MoviesSimilarModel.fromJson(e),
-          ));
-    } else {
-      throw ServerException(
-        errorMessageModel: ErrorMessageModel.fromJson(response.data),
-      );
-    }
-  }
+  // @override
+  // Future<List<MoviesSimilarModel>> getMovieSimilar(
+  //     MovieSimilarParameters parameters) async {
+  //   final response =
+  //   await Dio().get(ApiConstance.movieSimilarPath(parameters.movieID));
+  //   if (response.statusCode == 200) {
+  //     print('Call API getMovieSimilar');
+  //     return List<MoviesSimilarModel>.from(
+  //         (response.data["results"] as List).map(
+  //               (e) => MoviesSimilarModel.fromJson(e),
+  //         ));
+  //   } else {
+  //     throw ServerException(
+  //       errorMessageModel: ErrorMessageModel.fromJson(response.data),
+  //     );
+  //   }
+  // }
 
   @override
   Future<List<List<MovieModel>>> getMovies() async {
