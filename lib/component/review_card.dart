@@ -38,10 +38,10 @@ class ReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 6).r,
-                  child: Avatar(avatarUrl: review.avatarUrl),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 6).r,
+                //   child: Avatar(avatarUrl: review.avatarUrl),
+                // ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

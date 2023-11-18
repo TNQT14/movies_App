@@ -82,17 +82,17 @@ String getTrailerUrl(Map<String, dynamic> json) {
   }
 }
 
-String getAvatarUrl(String? path) {
-  if (path != null) {
-    if (path.startsWith('/https://www.gravatar.com/avatar')) {
-      return path.substring(1);
-    } else {
-      return ApiConstance.baseAvatarUrl + path;
-    }
-  } else {
-    return ApiConstance.avatarPlaceHolder;
-  }
-}
+// String getAvatarUrl(String? path) {
+//   if (path != null) {
+//     if (path.startsWith('/https://www.gravatar.com/avatar')) {
+//       return path.substring(1);
+//     } else {
+//       return ApiConstance.baseAvatarUrl + path;
+//     }
+//   } else {
+//     return ApiConstance.avatarPlaceHolder;
+//   }
+// }
 
 String getElapsedTime(String date) {
   DateTime reviewDate = DateTime.parse(date);

@@ -24,10 +24,10 @@ class ReviewContent extends StatelessWidget {
           children: [
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 6).r,
-                  child: Avatar(avatarUrl: review.avatarUrl),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 6).r,
+                //   child: Avatar(avatarUrl: review.avatarUrl),
+                // ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

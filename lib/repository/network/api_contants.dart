@@ -10,8 +10,8 @@ class ApiConstance {
   static const String castPlaceHolder =
       '';
 
-  static const String avatarPlaceHolder =
-      '';
+  // static const String avatarPlaceHolder =
+  //     '';
 
   /// API Constance For Movies
   static const String nowPlayingMoviesPath =
@@ -29,13 +29,6 @@ class ApiConstance {
   static String movieRecommendationPath(int movieID) =>
       "$host/api/$movieID/recommendations";
 
-  // static String movieSimilarPath(int movieID) =>
-  //     "";
-
-  // static const String topRatedMoviesPath =
-  //     "";
-
-  /// API Constance For Base Image URL
   static String imageURL(String imagePath) => '$imagePath';
 
 }
