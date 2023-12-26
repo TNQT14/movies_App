@@ -1,7 +1,7 @@
 class ApiConstance {
   static const String baseVideoUrl = 'https://www.youtube.com/watch?v=';
 
-  static const String host = "http://10.0.29.152:9000";
+  static const String host = "http://10.45.113.192:9000";
 
   static const String nowPlayingMoviesPath =
       "$host/api/netflix?page=1";
